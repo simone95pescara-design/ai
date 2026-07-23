@@ -39,6 +39,11 @@ Il passaggio a `stable` richiede:
 - almeno un esempio valido e un controesempio;
 - assenza di questioni semantiche aperte.
 
-## Primo nucleo ontologico
+## Nucleo ontologico
 
-La prima entità definita è [`STATE`](ontology/stato.md), perché trigger, transizioni e azioni dipendono dalla nozione di stato.
+| ID | Concetto | Stato | Dipendenze |
+|---|---|---|---|
+| [`STATE`](ontology/stato.md) | Stato | `draft` | — |
+| [`TRIGGER`](ontology/trigger.md) | Trigger | `draft` | `STATE` |
+
+L'ordine di costruzione segue le dipendenze semantiche. Dopo `STATE` e `TRIGGER`, il prossimo concetto da definire è `TRANSITION`, che formalizza la valutazione e il cambiamento tra stati.

@@ -7,31 +7,36 @@ Non è un deposito di appunti, idee grezze o materiale esplorativo. Un contenuto
 ## Struttura
 
 ```text
-ontology/   Concetti normativi e regole di governo del modello
-patterns/   Configurazioni ricorrenti costruite sull'ontologia
-examples/   Applicazioni illustrative e non normative
-glossary/   Definizioni terminologiche sintetiche
+ontology/       Concetti normativi del modello
+specification/  Regole normative che governano l'ontologia
+reviews/        Audit e verifiche della specifica
+patterns/       Configurazioni ricorrenti costruite sull'ontologia
+examples/       Applicazioni illustrative e non normative
+glossary/       Definizioni terminologiche sintetiche
 ```
+
+Tutti i nomi dei file usano il minuscolo. Gli identificatori ontologici interni, come `STATE` e `TRANSITION`, restano invece in maiuscolo.
 
 ## Principi di governo
 
-1. `ontology/` è normativa: definisce i concetti ammessi, le loro relazioni e le regole globali del modello.
-2. `patterns/` dipende dall'ontologia e non può contraddirla.
-3. `examples/` chiarisce il metodo ma non introduce regole.
-4. `glossary/` sintetizza termini già definiti altrove.
-5. Il materiale ancora in esplorazione resta fuori dalla specifica ufficiale.
-6. Ogni scheda ontologica deve rispettare il contratto definito in [`ontology/SCHEMA.md`](ontology/SCHEMA.md).
-7. Tutte le schede devono rispettare il [`metamodello`](ontology/METAMODEL.md), il [vocabolario delle relazioni](ontology/RELATIONS.md) e il [ciclo di vita della specifica](ontology/LIFECYCLE.md).
+1. `ontology/` contiene esclusivamente i concetti del dominio.
+2. `specification/` definisce schema, metamodello, relazioni e ciclo di vita.
+3. `reviews/` contiene audit e artefatti di verifica, non norme ontologiche.
+4. `patterns/` dipende dall'ontologia e non può contraddirla.
+5. `examples/` chiarisce il metodo ma non introduce regole.
+6. `glossary/` sintetizza termini già definiti altrove.
+7. Il materiale ancora in esplorazione resta fuori dalla specifica ufficiale.
 
 ## Documenti normativi trasversali
 
 | Documento | Funzione |
 |---|---|
-| [`SCHEMA.md`](ontology/SCHEMA.md) | Struttura obbligatoria delle schede ontologiche |
-| [`METAMODEL.md`](ontology/METAMODEL.md) | Invarianti globali e separazione delle responsabilità |
-| [`RELATIONS.md`](ontology/RELATIONS.md) | Vocabolario tipizzato delle relazioni ammesse |
-| [`LIFECYCLE.md`](ontology/LIFECYCLE.md) | Introduzione, revisione, promozione, versionamento e deprecazione |
-| [`REVIEW.md`](ontology/REVIEW.md) | Audit incrociato, anomalie rilevate e ordine delle correzioni normative |
+| [`schema.md`](specification/schema.md) | Struttura obbligatoria delle schede ontologiche |
+| [`metamodello.md`](specification/metamodello.md) | Invarianti globali e separazione delle responsabilità |
+| [`relazioni.md`](specification/relazioni.md) | Vocabolario tipizzato delle relazioni ammesse |
+| [`lifecycle.md`](specification/lifecycle.md) | Introduzione, revisione, promozione, versionamento e deprecazione |
+
+L'audit corrente è registrato in [`reviews/ontology-review.md`](reviews/ontology-review.md).
 
 ## Ciclo di maturità
 
@@ -82,12 +87,10 @@ RISK valuta possibili conseguenze rispetto a OBJECTIVE e interessi protetti.
 
 ## Stato della revisione
 
-La revisione incrociata è formalmente registrata in [`ontology/REVIEW.md`](ontology/REVIEW.md).
-
 L'audit ha rilevato come blocchi principali:
 
 1. dipendenze costitutive sovradichiarate;
-2. relazioni non normalizzate rispetto a `RELATIONS.md`;
+2. relazioni non normalizzate rispetto a `relazioni.md`;
 3. riferimenti obsoleti a concetti indicati come futuri;
 4. sovrapposizione parziale tra invarianti, precondizioni, guardie e `CONSTRAINT`;
 5. necessità di consolidare la catena causale `DECISION|ACTION → TRIGGER → TRANSITION → STATE`.

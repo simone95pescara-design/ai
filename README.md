@@ -7,7 +7,7 @@ Non è un deposito di appunti, idee grezze o materiale esplorativo. Un contenuto
 ## Struttura
 
 ```text
-ontology/   Concetti normativi del modello
+ontology/   Concetti normativi e regole di governo del modello
 patterns/   Configurazioni ricorrenti costruite sull'ontologia
 examples/   Applicazioni illustrative e non normative
 glossary/   Definizioni terminologiche sintetiche
@@ -15,12 +15,22 @@ glossary/   Definizioni terminologiche sintetiche
 
 ## Principi di governo
 
-1. `ontology/` è normativa: definisce i concetti ammessi e le loro relazioni.
+1. `ontology/` è normativa: definisce i concetti ammessi, le loro relazioni e le regole globali del modello.
 2. `patterns/` dipende dall'ontologia e non può contraddirla.
 3. `examples/` chiarisce il metodo ma non introduce regole.
 4. `glossary/` sintetizza termini già definiti altrove.
 5. Il materiale ancora in esplorazione resta fuori dalla specifica ufficiale.
 6. Ogni scheda ontologica deve rispettare il contratto definito in [`ontology/SCHEMA.md`](ontology/SCHEMA.md).
+7. Tutte le schede devono rispettare il [`metamodello`](ontology/METAMODEL.md), il [vocabolario delle relazioni](ontology/RELATIONS.md) e il [ciclo di vita della specifica](ontology/LIFECYCLE.md).
+
+## Documenti normativi trasversali
+
+| Documento | Funzione |
+|---|---|
+| [`SCHEMA.md`](ontology/SCHEMA.md) | Struttura obbligatoria delle schede ontologiche |
+| [`METAMODEL.md`](ontology/METAMODEL.md) | Invarianti globali e separazione delle responsabilità |
+| [`RELATIONS.md`](ontology/RELATIONS.md) | Vocabolario tipizzato delle relazioni ammesse |
+| [`LIFECYCLE.md`](ontology/LIFECYCLE.md) | Introduzione, revisione, promozione, versionamento e deprecazione |
 
 ## Ciclo di maturità
 
@@ -37,7 +47,8 @@ Il passaggio a `stable` richiede:
 - attributi e invarianti verificabili;
 - relazioni coerenti con le altre schede;
 - almeno un esempio valido e un controesempio;
-- assenza di questioni semantiche aperte.
+- assenza di questioni semantiche aperte;
+- conformità ai documenti normativi trasversali.
 
 ## Nucleo ontologico
 
@@ -68,4 +79,13 @@ CONSTRAINT limita tutte le entità applicabili.
 RISK valuta possibili conseguenze rispetto a OBJECTIVE e interessi protetti.
 ```
 
-Il prossimo passo non è aggiungere automaticamente nuovi concetti al nucleo, ma sottoporre le schede a revisione incrociata, risolvere le questioni aperte e consolidare le relazioni prima di promuovere qualsiasi entità a `stable` o introdurre pattern normativi.
+## Stato della revisione
+
+Il nucleo è ora sottoposto a revisione incrociata. Prima di promuovere qualsiasi entità a `stable` o introdurre pattern normativi occorre:
+
+1. verificare la separazione delle responsabilità;
+2. normalizzare le relazioni secondo `RELATIONS.md`;
+3. motivare e rendere acicliche le dipendenze costitutive;
+4. risolvere o registrare le questioni aperte;
+5. verificare invarianti, regole di validazione, esempi e controesempi;
+6. valutare il freeze architetturale del nucleo secondo `LIFECYCLE.md`.

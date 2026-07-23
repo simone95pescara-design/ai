@@ -48,5 +48,24 @@ Il passaggio a `stable` richiede:
 | [`TRANSITION`](ontology/transizione.md) | Transizione | `draft` | `STATE`, `TRIGGER` |
 | [`ACTION`](ontology/azione.md) | Azione | `draft` | `STATE`, `TRIGGER`, `TRANSITION` |
 | [`CONSTRAINT`](ontology/vincolo.md) | Vincolo | `draft` | `STATE`, `TRIGGER`, `TRANSITION`, `ACTION` |
+| [`OBJECTIVE`](ontology/obiettivo.md) | Obiettivo | `draft` | `STATE`, `ACTION`, `CONSTRAINT` |
+| [`OBSERVATION`](ontology/osservazione.md) | Osservazione | `draft` | `STATE`, `TRIGGER`, `CONSTRAINT` |
+| [`DECISION`](ontology/decisione.md) | Decisione | `draft` | `OBSERVATION`, `OBJECTIVE`, `CONSTRAINT`, `ACTION`, `TRIGGER` |
+| [`EVIDENCE`](ontology/evidenza.md) | Evidenza | `draft` | `OBSERVATION`, `DECISION`, `CONSTRAINT` |
+| [`RISK`](ontology/rischio.md) | Rischio | `draft` | `OBJECTIVE`, `CONSTRAINT`, `OBSERVATION`, `EVIDENCE`, `DECISION` |
 
-L'ordine di costruzione segue le dipendenze semantiche. Il nucleo distingue ora condizione, fatto attivante, cambiamento di stato, effetto operativo e limite normativo. Il prossimo concetto da definire è `OBJECTIVE`, necessario per rappresentare il risultato desiderato senza confonderlo con azioni, stati o decisioni.
+Il nucleo distingue condizione persistente, fatto attivante, cambiamento di stato, effetto operativo, limite normativo, risultato desiderato, rilevazione, scelta, supporto epistemico e possibilità di conseguenze indesiderate.
+
+## Catena concettuale
+
+```text
+OBSERVATION ──► EVIDENCE ──► DECISION ──► TRIGGER ──► TRANSITION ──► STATE
+       │              │             │                                      │
+       └──────────────┴─────────────┘                                      ├── abilita ACTION
+                                                                           └── contribuisce a OBJECTIVE
+
+CONSTRAINT limita tutte le entità applicabili.
+RISK valuta possibili conseguenze rispetto a OBJECTIVE e interessi protetti.
+```
+
+Il prossimo passo non è aggiungere automaticamente nuovi concetti al nucleo, ma sottoporre le schede a revisione incrociata, risolvere le questioni aperte e consolidare le relazioni prima di promuovere qualsiasi entità a `stable` o introdurre pattern normativi.

@@ -31,6 +31,7 @@ glossary/   Definizioni terminologiche sintetiche
 | [`METAMODEL.md`](ontology/METAMODEL.md) | Invarianti globali e separazione delle responsabilità |
 | [`RELATIONS.md`](ontology/RELATIONS.md) | Vocabolario tipizzato delle relazioni ammesse |
 | [`LIFECYCLE.md`](ontology/LIFECYCLE.md) | Introduzione, revisione, promozione, versionamento e deprecazione |
+| [`REVIEW.md`](ontology/REVIEW.md) | Audit incrociato, anomalie rilevate e ordine delle correzioni normative |
 
 ## Ciclo di maturità
 
@@ -81,11 +82,14 @@ RISK valuta possibili conseguenze rispetto a OBJECTIVE e interessi protetti.
 
 ## Stato della revisione
 
-Il nucleo è ora sottoposto a revisione incrociata. Prima di promuovere qualsiasi entità a `stable` o introdurre pattern normativi occorre:
+La revisione incrociata è formalmente registrata in [`ontology/REVIEW.md`](ontology/REVIEW.md).
 
-1. verificare la separazione delle responsabilità;
-2. normalizzare le relazioni secondo `RELATIONS.md`;
-3. motivare e rendere acicliche le dipendenze costitutive;
-4. risolvere o registrare le questioni aperte;
-5. verificare invarianti, regole di validazione, esempi e controesempi;
-6. valutare il freeze architetturale del nucleo secondo `LIFECYCLE.md`.
+L'audit ha rilevato come blocchi principali:
+
+1. dipendenze costitutive sovradichiarate;
+2. relazioni non normalizzate rispetto a `RELATIONS.md`;
+3. riferimenti obsoleti a concetti indicati come futuri;
+4. sovrapposizione parziale tra invarianti, precondizioni, guardie e `CONSTRAINT`;
+5. necessità di consolidare la catena causale `DECISION|ACTION → TRIGGER → TRANSITION → STATE`.
+
+Nessuna entità può essere promossa a `stable` prima dell'applicazione delle correzioni registrate nell'audit.

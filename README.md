@@ -45,5 +45,6 @@ Il passaggio a `stable` richiede:
 |---|---|---|---|
 | [`STATE`](ontology/stato.md) | Stato | `draft` | — |
 | [`TRIGGER`](ontology/trigger.md) | Trigger | `draft` | `STATE` |
+| [`TRANSITION`](ontology/transizione.md) | Transizione | `draft` | `STATE`, `TRIGGER` |
 
-L'ordine di costruzione segue le dipendenze semantiche. Dopo `STATE` e `TRIGGER`, il prossimo concetto da definire è `TRANSITION`, che formalizza la valutazione e il cambiamento tra stati.
+L'ordine di costruzione segue le dipendenze semantiche. Il nucleo descrive ora condizione, fatto attivante e cambiamento di stato. Il prossimo concetto da definire è `ACTION`, necessario per separare gli effetti operativi dalla semantica della transizione.

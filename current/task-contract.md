@@ -1,64 +1,44 @@
 # Contratto dell'attività corrente
 
+Questo file definisce esclusivamente autorità, input e obblighi dell'esecutore durante l'esperimento corrente.
+
 ## Scopo
 
-Eseguire il primo esperimento del repository: valutare se un esecutore comprende e rispetta limiti operativi espliciti senza inventare un'architettura definitiva.
+Applicare l'ipotesi contenuta in [`transformation-contract.md`](transformation-contract.md) al caso di verifica attivo senza estendere l'ambito dell'esperimento.
 
-## Input richiesti
+## Input vincolanti
 
-- [`state.md`](state.md);
-- la richiesta dell'utente;
-- il caso di verifica applicabile.
-
-## Azioni consentite
-
-- leggere e confrontare i documenti attivi;
-- estrarre fatti espliciti;
-- dichiarare ipotesi e assunzioni;
-- formulare proposte motivate;
-- indicare ambiguità e rischi;
-- verificare il risultato rispetto ai criteri dichiarati.
-
-## Azioni vietate
-
-- presentare un'ipotesi come decisione;
-- creare categorie o file soltanto perché comuni o considerati buone pratiche;
-- assumere che la struttura corrente sia definitiva;
-- modificare il repository senza autorizzazione esplicita;
-- reintrodurre come fondamento l'ontologia rimossa senza un'esigenza e una verifica specifiche;
-- dichiarare completata l'attività senza controllo dei criteri di accettazione.
-
-## Output obbligatorio
-
-L'output deve distinguere esplicitamente:
-
-1. fatti rilevati;
-2. assunzioni residue;
-3. ipotesi;
-4. proposte;
-5. decisioni già approvate;
-6. verifiche eseguite;
-7. questioni irrisolte.
-
-Le sezioni prive di contenuto possono essere dichiarate vuote, ma non devono essere fuse tra loro.
+- [`state.md`](state.md), per fatti, decisioni e stato dell'esperimento;
+- [`transformation-contract.md`](transformation-contract.md), per la trasformazione candidata;
+- [`../tests/first-behavior-case.md`](../tests/first-behavior-case.md), per input e criteri di verifica;
+- la richiesta effettiva dell'utente.
 
 ## Autorità
 
-L'esecutore può analizzare e proporre.
+L'esecutore può:
 
-Può modificare il repository solo quando la richiesta dell'utente autorizza esplicitamente l'applicazione delle modifiche. L'autorizzazione vale esclusivamente per l'ambito approvato.
+- leggere e confrontare gli input vincolanti;
+- applicare la trasformazione candidata;
+- dichiarare fatti, assunzioni e questioni irrisolte;
+- registrare l'esito del test;
+- proporre di mantenere, modificare o rifiutare l'ipotesi.
 
-## Criteri di accettazione
+L'esecutore non può:
 
-Il lavoro è conforme quando:
+- modificare file fuori dall'ambito esplicitamente autorizzato;
+- introdurre architetture, categorie, componenti o regole permanenti;
+- promuovere una proposta o un'ipotesi a decisione approvata;
+- alterare i criteri del test durante la sua esecuzione.
 
-- nessuna assunzione implicita è usata come fondamento senza essere dichiarata;
-- proposte e decisioni sono distinguibili;
-- ogni modifica o proposta ha una motivazione collegata a un problema osservato;
-- non vengono introdotti artefatti estranei al compito;
-- il risultato viene confrontato con il caso di verifica;
-- le questioni non risolte restano esplicite.
+## Output richiesto
 
-## Criterio di completamento
+L'esecuzione deve produrre:
 
-L'attività è completata soltanto dopo la registrazione dell'esito del primo caso comportamentale e della conseguente decisione su questo contratto.
+- l'output previsto dal caso di verifica;
+- l'elenco dei criteri soddisfatti e violati;
+- le assunzioni non dichiarate rilevate in revisione;
+- una proposta motivata: `mantenere`, `modificare` oppure `rifiutare`.
+
+## Completamento
+
+L'attività è completata solo quando l'esito è registrato. Questo contratto non stabilisce da solo se l'ipotesi di trasformazione sia valida.

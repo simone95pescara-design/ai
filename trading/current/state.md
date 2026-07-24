@@ -5,31 +5,34 @@ Questo file registra esclusivamente fatti, decisioni approvate e avanzamento.
 ## Fatti
 
 - Non esiste ancora un sistema di trading operativo.
-- Non sono state scelte strategia, fonte dati, broker, mercato o modalità di esecuzione.
-- Il primo dominio richiesto è `data`.
-- Il primo bisogno tecnico osservato è garantire comportamento software uniforme e verificabile.
+- Non sono state scelte strategia, fonte dati, broker, mercato, linguaggio o modalità di esecuzione.
+- Il primo dominio indicato dall'utente è `data`, ma non è ancora definito alcun comportamento software.
+- La prima implementazione ha introdotto dall'alto struttura, modello OHLCV, test e CI senza requisiti autorizzati.
+- Il problema osservato non è soltanto tecnico: mancava un controllo che rendesse vietate le decisioni implicite dell'esecutore.
 
 ## Decisioni approvate
 
-- Il sistema viene sviluppato per casi verticali minimi verificabili.
-- Il primo artefatto software è un modello OHLCV con invarianti esplicite.
-- La qualità automatica usa Black, Ruff, mypy e pytest in GitHub Actions.
-- Non vengono introdotti agenti AI, orchestratori o workflow applicativi finché un caso concreto non ne dimostra la necessità.
+- Nessun codice viene introdotto finché input, output, vincoli e criterio di verifica non sono espliciti.
+- Nessuna modifica strutturale viene applicata senza autorizzazione umana che nomini gli artefatti ammessi.
+- In assenza di autorizzazione esplicita, l'esecutore resta in modalità di analisi e proposta.
+- Ambiguità, silenzio e richieste generiche non costituiscono autorizzazione.
+- La directory `tests/`, quando esisterà, sarà riservata esclusivamente a test automatici eseguibili.
+- Non vengono introdotti agenti, orchestratori, workflow applicativi o strumenti di qualità finché un caso autorizzato non ne dimostra la necessità.
 - Nessun componente può inviare ordini reali o gestire capitale in questa fase.
 
 ## Fase corrente
 
-`fondazione-data`
+`controllo-autorita-prima-del-software`
 
 ## Avanzamento
 
-- configurazione Python: proposta nella branch corrente;
-- CI: proposta nella branch corrente;
-- modello `Candle`: implementato;
-- test degli invarianti: implementati;
-- acquisizione dati esterni: non iniziata;
-- strategia e backtest: fuori ambito.
+- artefatti software prematuri: rimossi nella branch correttiva;
+- documento Markdown sotto `tests/`: rimosso;
+- richiesta iniziale: registrata come caso, non come test;
+- contratto operativo: rafforzato con divieti e controllo di ammissibilità;
+- primo comportamento del dominio data: non ancora definito;
+- CI e strumenti: non autorizzati.
 
 ## Condizione di uscita
 
-La fase termina quando la CI supera tutti i controlli e il caso verticale data viene accettato o corretto sulla base dell'evidenza.
+La fase termina soltanto quando esiste una richiesta concreta che supera il controllo di ammissibilità senza decisioni dedotte dall'esecutore.

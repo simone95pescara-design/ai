@@ -7,22 +7,24 @@ Questo file registra esclusivamente fatti, decisioni approvate e avanzamento del
 - Il repository precedente era un prototipo centrato su un'ontologia non ancora giustificata da casi d'uso.
 - È stata approvata una rifondazione senza compatibilità con quella struttura.
 - Il materiale precedente resta disponibile nella cronologia Git.
-- Non è ancora stata validata una trasformazione fondamentale per il repository.
+- Il primo problema osservato è la presenza di più fonti autoritative concorrenti sullo stesso stato, sulle stesse regole e sugli stessi criteri.
+- Il problema è stato osservato nel README e nei documenti attivi durante la prima rifondazione.
 
 ## Decisioni approvate
 
-- Prima di progettare un'architettura deve essere identificata e verificata la trasformazione utile.
+- Ogni responsabilità deve avere una sola fonte autoritativa.
+- Il README non è una fonte autoritativa e serve esclusivamente alla navigazione.
 - Le modifiche al repository richiedono autorizzazione esplicita.
 - Fatti, decisioni, ipotesi e proposte devono restare distinguibili.
 
 ## Esperimento corrente
 
-- fase: `definizione-trasformazione`
+- fase: `eliminazione-autorita-concorrenti`
 - contratto operativo: [`task-contract.md`](task-contract.md)
-- ipotesi sottoposta a prova: [`transformation-contract.md`](transformation-contract.md)
+- trasformazione sottoposta a prova: [`transformation-contract.md`](transformation-contract.md)
 - caso di verifica: [`../tests/first-behavior-case.md`](../tests/first-behavior-case.md)
-- esito: `non-eseguito`
+- esito: `eseguito-con-correzione`
 
 ## Condizione di uscita
 
-La fase termina quando il caso di verifica è stato eseguito, l'evidenza è stata registrata e l'ipotesi è stata mantenuta, modificata o rifiutata.
+La fase termina quando il repository è stato verificato e ogni contenuto normativo, operativo o di stato dispone di una sola fonte autoritativa identificabile.

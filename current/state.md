@@ -1,36 +1,28 @@
 # Stato operativo
 
+Questo file registra esclusivamente fatti, decisioni approvate e avanzamento dell'esperimento corrente.
+
 ## Fatti
 
 - Il repository precedente era un prototipo centrato su un'ontologia non ancora giustificata da casi d'uso.
 - È stata approvata una rifondazione senza compatibilità con quella struttura.
-- Il materiale precedente deve restare soltanto nella cronologia Git.
-- Il primo problema da risolvere è identificare la trasformazione utile prima di progettare l'architettura.
+- Il materiale precedente resta disponibile nella cronologia Git.
+- Non è ancora stata validata una trasformazione fondamentale per il repository.
 
 ## Decisioni approvate
 
-- Il repository deve sviluppare un protocollo di lavoro verificabile.
-- L'AI deve agire come esecutore di istruzioni esplicite, non completare autonomamente le parti mancanti.
-- Ogni modifica al repository deve derivare da un'esigenza dimostrata.
+- Prima di progettare un'architettura deve essere identificata e verificata la trasformazione utile.
+- Le modifiche al repository richiedono autorizzazione esplicita.
 - Fatti, decisioni, ipotesi e proposte devono restare distinguibili.
-- Nessuna architettura deve essere introdotta prima di aver definito e verificato la trasformazione richiesta.
 
-## Fase corrente
+## Esperimento corrente
 
-`definizione-trasformazione`
+- fase: `definizione-trasformazione`
+- contratto operativo: [`task-contract.md`](task-contract.md)
+- ipotesi sottoposta a prova: [`transformation-contract.md`](transformation-contract.md)
+- caso di verifica: [`../tests/first-behavior-case.md`](../tests/first-behavior-case.md)
+- esito: `non-eseguito`
 
-## Obiettivo corrente
+## Condizione di uscita
 
-Verificare se una richiesta umana incompleta può essere trasformata in una descrizione esplicita e verificabile dello stato iniziale e dello stato finale desiderato, senza anticipare una soluzione tecnica.
-
-## Ipotesi in verifica
-
-- La trasformazione candidata è: trasformare un'intenzione umana incompleta in un cambiamento operativo verificabile, senza introdurre decisioni non autorizzate.
-- La forma minima `stato iniziale → stato finale desiderato` può rendere esplicito il cambiamento richiesto.
-- La separazione tra stato operativo, contratto dell'attività, contratto di trasformazione e caso di verifica è sufficiente per questo esperimento.
-
-Queste ipotesi non costituiscono ancora regole permanenti.
-
-## Criterio di uscita
-
-La fase termina soltanto quando il caso di verifica della trasformazione è stato eseguito, il risultato è stato registrato e si può decidere se mantenere, modificare o rifiutare il contratto di trasformazione.
+La fase termina quando il caso di verifica è stato eseguito, l'evidenza è stata registrata e l'ipotesi è stata mantenuta, modificata o rifiutata.

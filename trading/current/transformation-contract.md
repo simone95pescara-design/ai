@@ -2,40 +2,57 @@
 
 ## Stato epistemico
 
-`da-specificare`
+`problema-osservato`
 
 ## Formulazione
 
 ```text
-richiesta generica di iniziare dal dominio data
-→ primo comportamento osservabile e verificabile autorizzato
+esecutore libero di dedurre struttura e requisiti da richieste generiche
+→ esecutore incapace di modificare senza autorizzazione esplicita e verificabile
 ```
 
 ## Stato iniziale
 
-È stato indicato il dominio `data`, ma non sono ancora noti:
+Una richiesta incompleta poteva essere interpretata come autorizzazione a scegliere autonomamente:
 
-- la decisione che i dati devono supportare;
-- il dato necessario;
-- la fonte;
-- la frequenza;
-- il formato;
-- i requisiti qualitativi;
-- il comportamento software richiesto.
+- struttura di directory e file;
+- modelli del dominio;
+- linguaggio e dipendenze;
+- test e CI;
+- collocazione degli artefatti.
+
+Questo ha prodotto modifiche dall'alto non giustificate dal problema osservato.
 
 ## Stato finale desiderato
 
-Una descrizione esplicita che definisca almeno:
+Prima di qualsiasi modifica esiste un controllo che distingue:
 
-```text
-input
-output
-vincoli
-criterio di verifica
-```
+- ciò che è osservato;
+- ciò che è proposto;
+- ciò che è deciso;
+- ciò che è esplicitamente autorizzato.
 
-La descrizione non deve scegliere anticipatamente modelli di dominio, linguaggio, framework, package, CI, agenti o workflow.
+Una modifica è eseguibile soltanto quando problema, trasformazione, artefatti, operazioni, vincoli e criterio di verifica sono espliciti. In caso contrario l'esecutore può soltanto analizzare e proporre.
+
+## Evidenza richiesta
+
+Il contratto operativo deve rendere esplicitamente vietati:
+
+- creazione o modifica di struttura non nominata;
+- introduzione di modelli e requisiti dedotti;
+- aggiunta di strumenti, configurazioni e workflow non autorizzati;
+- trasformazione di esempi o pratiche comuni in decisioni;
+- uso di richieste generiche come autorizzazione strutturale.
+
+## Fuori ambito
+
+- definizione del dominio data;
+- codice applicativo;
+- test automatici;
+- CI;
+- agenti e workflow;
+- scelte tecnologiche.
 
 ## Limite
 
-Questo contratto non autorizza ancora implementazione software. La tecnologia viene scelta soltanto dopo che il comportamento da produrre la rende necessaria.
+Questa trasformazione controlla l'autorità dell'esecutore. Non autorizza ancora alcuna implementazione del sistema di trading.

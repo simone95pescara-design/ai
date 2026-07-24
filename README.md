@@ -12,7 +12,8 @@ Il nucleo attivo contiene soltanto:
 
 - lo stato operativo corrente;
 - il contratto dell'attività corrente;
-- un primo caso di verifica comportamentale.
+- l'ipotesi di trasformazione corrente;
+- un caso di verifica comportamentale.
 
 Il prototipo precedente è stato rimosso dalla branch di rifondazione. Rimane disponibile esclusivamente nella cronologia Git.
 
@@ -22,9 +23,10 @@ Prima di operare, un esecutore deve leggere nell'ordine:
 
 1. [`current/state.md`](current/state.md);
 2. [`current/task-contract.md`](current/task-contract.md);
-3. il caso di verifica applicabile in [`tests/`](tests/).
+3. [`current/transformation-contract.md`](current/transformation-contract.md);
+4. il caso di verifica applicabile in [`tests/`](tests/).
 
-L'esecutore deve distinguere fatti, decisioni, ipotesi e proposte; dichiarare le assunzioni residue; rispettare i limiti di autorità; verificare l'output prima di considerare conclusa l'attività.
+L'esecutore deve distinguere fatti, decisioni, ipotesi e proposte; dichiarare le assunzioni residue; rispettare i limiti di autorità; definire la trasformazione richiesta prima di proporre una soluzione; verificare l'output prima di considerare conclusa l'attività.
 
 ## Regola di ammissione
 

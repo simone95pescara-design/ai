@@ -2,39 +2,40 @@
 
 ## Stato epistemico
 
-`ipotesi-in-verifica`
+`da-specificare`
 
 ## Formulazione
 
 ```text
-assenza di un dato di mercato formalizzato
-→ rappresentazione OHLCV con invarianti verificabili automaticamente
+richiesta generica di iniziare dal dominio data
+→ primo comportamento osservabile e verificabile autorizzato
 ```
 
 ## Stato iniziale
 
-Il sistema non possiede ancora un contratto software che stabilisca cosa renda valida una singola osservazione OHLCV.
+È stato indicato il dominio `data`, ma non sono ancora noti:
+
+- la decisione che i dati devono supportare;
+- il dato necessario;
+- la fonte;
+- la frequenza;
+- il formato;
+- i requisiti qualitativi;
+- il comportamento software richiesto.
 
 ## Stato finale desiderato
 
-Esiste un tipo `Candle` immutabile che:
+Una descrizione esplicita che definisca almeno:
 
-- usa timestamp UTC consapevoli del fuso;
-- rappresenta prezzi e volume con `Decimal`;
-- rifiuta intervalli di prezzo incoerenti;
-- rifiuta volumi negativi;
-- è coperto da test automatici;
-- supera formato, lint e controllo statico dei tipi.
+```text
+input
+output
+vincoli
+criterio di verifica
+```
 
-## Fuori ambito
-
-- download da provider esterni;
-- persistenza;
-- aggregazione dei timeframe;
-- gestione di dataset completi;
-- segnali, strategie, backtest, rischio ed esecuzione;
-- agenti AI e orchestrazione.
+La descrizione non deve scegliere anticipatamente modelli di dominio, linguaggio, framework, package, CI, agenti o workflow.
 
 ## Limite
 
-Questo contratto non definisce l'intero dominio data. Definisce soltanto il primo comportamento software osservabile necessario per farlo emergere progressivamente.
+Questo contratto non autorizza ancora implementazione software. La tecnologia viene scelta soltanto dopo che il comportamento da produrre la rende necessaria.

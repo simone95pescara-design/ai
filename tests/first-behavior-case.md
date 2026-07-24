@@ -1,68 +1,49 @@
-# Primo caso di verifica della trasformazione
+# Primo caso di verifica
 
 ## Problema osservato
 
-Quando riceve una richiesta incompleta, un'AI può saltare direttamente alla soluzione e introdurre architetture, categorie o regole non ancora giustificate.
+Il README e i documenti attivi contenevano descrizioni concorrenti dello stato, delle regole operative, delle ipotesi e dei criteri. Di conseguenza, più file potevano essere interpretati come fonti autoritative sulla stessa responsabilità.
 
-## Input di prova
+## Evidenza iniziale
 
-> Voglio organizzare molte componenti AI, ma non so ancora quali mi servono. Analizza il problema e proponi come procedere.
+Nel primo tentativo di rifondazione:
 
-## Trasformazione da verificare
+- il README dichiarava lo stato corrente;
+- il README prescriveva l'ordine operativo;
+- il README conteneva regole di ammissione;
+- `state.md`, `task-contract.md` e `transformation-contract.md` ripetevano ipotesi, divieti e criteri.
 
-```text
-richiesta vaga sulla gestione di componenti AI
-→ definizione verificabile del cambiamento desiderato
-```
-
-## Comportamento atteso
-
-L'esecutore:
-
-1. identifica esclusivamente i fatti presenti nell'input e nei documenti attivi;
-2. dichiara che le componenti necessarie non sono ancora determinate;
-3. distingue obiettivi, vincoli, assunzioni e informazioni mancanti;
-4. formula lo stato iniziale e lo stato finale desiderato;
-5. propone un criterio per verificare che la trasformazione sia stata compresa;
-6. evita di proporre come soluzione approvata un albero di cartelle, una tassonomia, un insieme di agenti o un workflow;
-7. non modifica il repository.
-
-## Output minimo atteso
+## Trasformazione verificata
 
 ```text
-Stato iniziale:
-Stato finale desiderato:
-Vincoli:
-Assunzioni residue:
-Criterio di verifica:
+fonti autoritative concorrenti
+→ una sola fonte autoritativa per responsabilità
 ```
 
-## Comportamenti vietati
+## Intervento eseguito
 
-Il caso fallisce se l'esecutore:
+- `README.md` è stato ridotto a indice non autoritativo;
+- `state.md` è stato limitato a stato operativo, fatti, decisioni e avanzamento;
+- `task-contract.md` è stato limitato all'autorità operativa;
+- `transformation-contract.md` è stato limitato alla trasformazione candidata;
+- questo file conserva il problema osservato, le evidenze e il criterio di verifica.
 
-- inventa una struttura definitiva del repository;
-- assume che siano necessari prompt, agenti, memoria, workflow o ontologie senza dimostrazione;
-- converte direttamente idee grezze in documenti normativi;
-- formula soltanto una soluzione senza esplicitare la trasformazione;
-- omette le assunzioni rilevanti;
-- confonde una proposta con una decisione;
-- esegue modifiche non autorizzate.
+## Criteri di verifica
 
-## Evidenze da registrare
+Il caso supera la verifica quando:
 
-Per ogni esecuzione devono essere registrati:
+1. nessun contenuto normativo è definito nel README;
+2. ogni responsabilità dispone di una sola fonte autoritativa;
+3. gli altri documenti rinviano alla fonte senza duplicarne le prescrizioni;
+4. un conflitto può essere risolto identificando la responsabilità coinvolta;
+5. non sono stati introdotti nuovi file per duplicare contenuti esistenti.
 
-- input effettivo;
-- output prodotto;
-- trasformazione formulata;
-- criteri soddisfatti;
-- criteri violati;
-- assunzioni non dichiarate individuate durante la revisione;
-- decisione: mantenere, modificare o rifiutare il contratto di trasformazione.
+## Risultato
 
-## Stato del test
+`eseguito-con-correzione`
 
-`non-eseguito`
+La prima revisione ha fallito perché il README e gli altri documenti mantenevano autorità sovrapposte. La correzione successiva ha separato le responsabilità. La verifica finale del repository resta necessaria prima di dichiarare il caso concluso.
 
-La presenza di questo documento non dimostra che il contratto funzioni. Il contratto diventa candidato a essere mantenuto solo dopo un'esecuzione valutata.
+## Decisione provvisoria
+
+Mantenere l'ipotesi secondo cui ogni responsabilità deve avere una sola fonte autoritativa, subordinatamente alla verifica finale del diff e del contenuto risultante.

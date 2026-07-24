@@ -8,30 +8,24 @@ Questo file descrive esclusivamente il cambiamento candidato. Non assegna autori
 
 ## Formulazione
 
-Trasformare un'intenzione umana incompleta in una descrizione esplicita del cambiamento operativo desiderato, senza introdurre decisioni non autorizzate.
+Trasformare un insieme di documenti con autorità sovrapposte in un sistema in cui ogni responsabilità dispone di una sola fonte autoritativa identificabile.
 
 ## Stato iniziale
 
-Una richiesta umana il cui cambiamento desiderato non è ancora espresso in modo sufficientemente preciso da poter essere verificato.
+Più documenti descrivono o prescrivono lo stesso stato, la stessa regola o lo stesso criterio, rendendo possibile il conflitto tra fonti.
 
 ## Stato finale
 
-Una descrizione che esplicita almeno:
-
-```text
-stato iniziale → stato finale desiderato
-```
-
-La descrizione deve rendere osservabile il cambiamento richiesto senza determinare prematuramente la soluzione che lo produrrà.
+Ogni responsabilità è assegnata a una sola fonte autoritativa; gli altri documenti possono soltanto rinviare a quella fonte senza duplicarne il contenuto normativo.
 
 ## Invarianti
 
 Durante la trasformazione:
 
-- le informazioni mancanti restano esplicite;
-- le assunzioni non diventano fatti;
-- le proposte non diventano decisioni;
-- la soluzione tecnica resta indeterminata quando non è già autorizzata o necessaria alla formulazione del cambiamento.
+- la cronologia Git resta disponibile;
+- nessuna responsabilità viene eliminata senza identificarne la fonte residua;
+- un indice o documento di navigazione non diventa normativo;
+- stato, autorità operativa, trasformazione e verifica restano responsabilità distinte.
 
 ## Limite
 
